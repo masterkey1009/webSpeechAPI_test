@@ -15,7 +15,7 @@ function start () {
 		for (var i = 0; i < e.results.length; i++) {
 			if (e.results[i].isFinal) {
 				finalText += e.results[i][0].transcript;
-				console.log(finalText);
+				console.log('音声入力結果は '  + finalText + ' です。');
 			} else {
 				interimText += e.results[i][0].transcript;
 			}
@@ -35,11 +35,11 @@ function stop () {
 document.querySelector('#btn2').onclick = function () {
 	if (nowRecognition) {
 		stop();
-		this.value = '音声認識を継続的に行う';
+		this.value = 'Continue Get Voice';
 		this.className = 'btn btn-lg btn-primary';
 	} else {
 		start();
-		this.value = '音声認識を止める';
+		this.value = 'Stop';
 		this.className = 'btn btn-lg btn-primary';
 	}
 }
